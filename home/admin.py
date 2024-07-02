@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import Message
+from .models import Cilt
 
-admin.site.register(Message)
+admin.site.register(Cilt)
