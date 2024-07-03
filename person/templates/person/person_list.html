@@ -1,0 +1,33 @@
+{% extends 'person/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Persons</title>
+</head>
+<body>
+    <h1>Persons</h1>
+    <ul>
+        {% for person in persons %}
+            <li>
+                <a href="{% url 'person_detail' person.user.id %}">{{ person }}</a> | 
+                <a href="{% url 'person_edit' person.user.id %}">Edit</a> | 
+                <a href="{% url 'person_delete' person.user.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'person_create' %}">Add New Person</a>
+</body>
+</html>
+
+
+
+
+{% endblock %}
+
+
+
+
+

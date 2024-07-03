@@ -1,0 +1,18 @@
+{% extends 'person/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Error</title>
+</head>
+<body>
+    <h2>Daha önce veri eklediniz!</h2>
+    <p>En fazla verilerinizi veri görüntüle sayfasından <a href="{% url 'person_detail' user_id=user.id %}" class="btn btn-primary mr-2">Düzenleyebilirsiniz.</a></p>
+</body>
+</html>
+
+{% endblock %}
