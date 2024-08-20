@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" action="{% url 'post-create' %}">
+    {% csrf_token %}
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <img src="/media/1.png" class="card-img-top m-auto" alt="..." style="width: 10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Type 1</h5>
+          <button class="btn btn-primary" name="b1" value="1" id="btn" >Report</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <img src="/media/2.png" class="card-img-top m-auto" alt="..." style="width: 10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Type 2</h5>
+          <button class="btn btn-primary" name="b1" value="2" id="btn">Report</button>
+        </div>
+      </div>
+    </div>
+</div>
+</form>
+
+{% endblock content %}

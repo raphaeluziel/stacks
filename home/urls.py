@@ -2,9 +2,9 @@ from django.urls import path
 from django.views import View
 
 from . import views
-from .views import filterTask
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('filter', filterTask.as_view(), name='filter'),
+    path('choose_type/', views.choose_type, name='blog-choose_type'),
+    path('poster', views.PostCreate, name='post-create'),
 ]

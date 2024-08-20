@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
     'home',
 ]
 
@@ -114,6 +116,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 
 # Static files (CSS, JavaScript, Images)

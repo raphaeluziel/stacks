@@ -7,30 +7,21 @@ from .forms import Taskform
 def home(request):
 
     return render(request, 'home/home.html')
+  
 
-
-class filterTask(View):
-
-    def get(self, request):
-        form = Taskform(request.GET.get('priorityChoice'))
-        ans = Task.objects.all().values()
-        return render(request, 'home/filter-task.html', context={'ans':ans});
-
-    def post(self, request):
-
-        
-
-        print("HERE")
-        
+def PostCreate(request):
+    print(request.POST)
+    x = request.POST.get('b1')
+    print(x)
+    if request.method == 'POST':
+        form = Taskform(request.POST or None, request.FILES or None)
+        files = request.FILES.getlist('file')
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+    else:
         form = Taskform()
-        if request.method == 'GET':
-            print("GET")
-            form = Taskform(request.GET.get('priorityChoice'))
-            ans = Task.objects.filter(priority = form).values()
-        else:
-            print("WHat")
-             
+    return render(request, 'home/post_form.html', {'form': form})
 
-        return redirect(request, 'home:home')
-    
-
+def choose_type(request):
+    return render(request, 'home/choose_type.html')
